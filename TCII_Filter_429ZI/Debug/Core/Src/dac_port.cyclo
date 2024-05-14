@@ -1,0 +1,2 @@
+../Core/Src/dac_port.c:12:6:DAC_Init	1
+../Core/Src/dac_port.c:18:6:DAC_Write	1

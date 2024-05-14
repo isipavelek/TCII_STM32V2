@@ -1,0 +1,2 @@
+C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/arm_math.h:525:25:mult32x64	72	static
+../Drivers/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.c:187:6:arm_biquad_cas_df1_32x64_q31	720	static

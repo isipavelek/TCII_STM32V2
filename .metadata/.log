@@ -1,0 +1,18 @@
+!SESSION 2024-05-14 00:02:41.333 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\ipave\Documentos\GitHub\TCII_STM32V2
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-05-14 00:02:54.635
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-05-14 00:02:54.640
+!MESSAGE Log4j2 initialized with config file C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-05-14 00:03:02.924
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-14 00:04:09.326
+!MESSAGE Indexed 'TCII_Filter_429ZI' (307 sources, 150 headers) in 7.33 sec: 23,861 declarations; 127,862 references; 2 unresolved inclusions; 169 syntax errors; 241 unresolved names (0.16%)

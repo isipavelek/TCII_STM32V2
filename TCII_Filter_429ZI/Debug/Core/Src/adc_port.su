@@ -1,0 +1,2 @@
+../Core/Src/adc_port.c:12:6:ADC_Init	8	static
+../Core/Src/adc_port.c:17:10:ADC_Read	8	static

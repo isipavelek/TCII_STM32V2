@@ -1,0 +1,1 @@
+../Drivers/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_q15.c:74:6:arm_fir_interpolate_q15	136	static,ignoring_inline_asm

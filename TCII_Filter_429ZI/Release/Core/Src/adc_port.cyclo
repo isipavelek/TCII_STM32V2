@@ -1,0 +1,2 @@
+../Core/Src/adc_port.c:12:6:ADC_Init	1
+../Core/Src/adc_port.c:17:10:ADC_Read	1

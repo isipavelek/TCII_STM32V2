@@ -1,0 +1,2 @@
+C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/arm_math.h:484:25:clip_q63_to_q31	16	static
+../Drivers/CMSIS/DSP/Source/FilteringFunctions/arm_lms_q31.c:77:6:arm_lms_q31	528	static
