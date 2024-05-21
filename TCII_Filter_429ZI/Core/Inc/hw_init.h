@@ -10,6 +10,7 @@
 
 #include "main.h"
 #include "string.h"
+#include "filter.h"
 
 void Hard_Init(void);
 void SystemClock_Config(void);
@@ -22,5 +23,6 @@ void MX_DAC_Init(void);
 void MX_TIM2_Init(void);
 void MX_NVIC_Init(void);
 
+#define FBUS 168000000
 
 #endif /* INC_HW_INIT_H_ */

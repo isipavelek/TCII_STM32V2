@@ -40,7 +40,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/arm_math.h \
  C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/core_cm4.h \
  ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/adc_port.h \
- ../Core/Inc/dac_port.h ../Core/Inc/hw_init.h
+ ../Core/Inc/dac_port.h ../Core/Inc/hw_init.h ../Core/Inc/filter.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -87,3 +87,4 @@ C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DS
 ../Core/Inc/adc_port.h:
 ../Core/Inc/dac_port.h:
 ../Core/Inc/hw_init.h:
+../Core/Inc/filter.h:

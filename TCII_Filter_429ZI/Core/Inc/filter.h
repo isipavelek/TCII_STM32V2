@@ -18,20 +18,23 @@
 #define float_filter
 
 #ifdef float_filter
-#define arm_fir_init arm_fir_init_f32
-#define arm_biquad_cascade_df1_init arm_biquad_cascade_df1_init_f32
-#define filter_bicuad_cascade arm_biquad_cascade_df1_f32
-#define arm_fir arm_fir_f32
+	#define arm_fir_init arm_fir_init_f32
+	#define arm_biquad_cascade_df1_init arm_biquad_cascade_df1_init_f32
+	#define filter_bicuad_cascade arm_biquad_cascade_df1_f32
+	#define arm_fir arm_fir_f32
 #else
-#define arm_fir_init arm_fir_init_q31
-#define arm_biquad_cascade_df1_init arm_biquad_cascade_df1_init_q31
-#define filter_bicuad_cascade arm_biquad_cascade_df1_q31
-#define arm_fir arm_fir_q31
+	#define arm_fir_init arm_fir_init_q31
+	#define arm_biquad_cascade_df1_init arm_biquad_cascade_df1_init_q31
+	#define filter_bicuad_cascade arm_biquad_cascade_df1_q31
+	#define arm_fir arm_fir_q31
 #endif
 
 
-#define FIR_TAP_NUM 101
+#define FIR_TAP_NUM 8
 #define IIR_TAP_NUM 15
+
+#define SAMPLE_RATE 44100
+
 
 #define SAMPLES_PER_BLOCK 1024
 
@@ -47,7 +50,6 @@ typedef enum{
 	PROCESAR_B,
 
 }procesar_type_t;
-
 
 
 #endif /* INC_FILTER_H_ */

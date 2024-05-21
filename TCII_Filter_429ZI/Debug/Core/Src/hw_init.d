@@ -35,7 +35,10 @@ Core/Src/hw_init.o: ../Core/Src/hw_init.c ../Core/Inc/hw_init.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+ ../Core/Inc/filter.h \
+ C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/arm_math.h \
+ C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/core_cm4.h
 ../Core/Inc/hw_init.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -75,3 +78,6 @@ C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DS
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
+../Core/Inc/filter.h:
+C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/arm_math.h:
+C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include/core_cm4.h:

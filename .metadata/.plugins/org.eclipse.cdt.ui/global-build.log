@@ -1,4 +1,4 @@
-00:04:39 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
+00:09:40 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I"C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "TCII_Filter_429ZI.elf" @"objects.list"  -larm_cortexM4lf_math -mcpu=cortex-m4 -T"C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\TCII_Filter_429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TCII_Filter_429ZI.map" -Wl,--gc-sections -static -L"C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\TCII_Filter_429ZI\Drivers\CMSIS\lib\GCC" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,8 +7,60 @@ Finished building target: TCII_Filter_429ZI.elf
 arm-none-eabi-size  TCII_Filter_429ZI.elf 
 arm-none-eabi-objdump -h -S TCII_Filter_429ZI.elf  > "TCII_Filter_429ZI.list"
    text	   data	    bss	    dec	    hex	filename
-  23400	     12	  29180	  52592	   cd70	TCII_Filter_429ZI.elf
+  22712	     48	  24192	  46952	   b768	TCII_Filter_429ZI.elf
 Finished building: default.size.stdout
  
 Finished building: TCII_Filter_429ZI.list
+ 
+00:09:46 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
+make -j16 all 
+arm-none-eabi-size  TCII_Filter_429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22712	     48	  24192	  46952	   b768	TCII_Filter_429ZI.elf
+Finished building: default.size.stdout
+ 
+00:11:54 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/filter.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I"C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/filter.d" -MT"Core/Src/filter.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/filter.o"
+arm-none-eabi-gcc -o "TCII_Filter_429ZI.elf" @"objects.list"  -larm_cortexM4lf_math -mcpu=cortex-m4 -T"C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\TCII_Filter_429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TCII_Filter_429ZI.map" -Wl,--gc-sections -static -L"C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\TCII_Filter_429ZI\Drivers\CMSIS\lib\GCC" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TCII_Filter_429ZI.elf
+ 
+arm-none-eabi-size  TCII_Filter_429ZI.elf 
+arm-none-eabi-objdump -h -S TCII_Filter_429ZI.elf  > "TCII_Filter_429ZI.list"
+   text	   data	    bss	    dec	    hex	filename
+  22712	     48	  24192	  46952	   b768	TCII_Filter_429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: TCII_Filter_429ZI.list
+ 
+00:12:01 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
+make -j16 all 
+arm-none-eabi-size  TCII_Filter_429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22712	     48	  24192	  46952	   b768	TCII_Filter_429ZI.elf
+Finished building: default.size.stdout
+ 
+00:16:25 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I"C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/adc.d" -MT"Core/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/adc.o"
+arm-none-eabi-gcc "../Core/Src/filter.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I"C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/filter.d" -MT"Core/Src/filter.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/filter.o"
+arm-none-eabi-gcc "../Core/Src/hw_init.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I"C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hw_init.d" -MT"Core/Src/hw_init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/hw_init.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I"C:/Users/ipave/Documentos/GitHub/TCII_STM32V2/TCII_Filter_429ZI/Drivers/CMSIS/DSP/Include" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TCII_Filter_429ZI.elf" @"objects.list"  -larm_cortexM4lf_math -mcpu=cortex-m4 -T"C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\TCII_Filter_429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TCII_Filter_429ZI.map" -Wl,--gc-sections -static -L"C:\Users\ipave\Documentos\GitHub\TCII_STM32V2\TCII_Filter_429ZI\Drivers\CMSIS\lib\GCC" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TCII_Filter_429ZI.elf
+ 
+arm-none-eabi-size  TCII_Filter_429ZI.elf 
+arm-none-eabi-objdump -h -S TCII_Filter_429ZI.elf  > "TCII_Filter_429ZI.list"
+   text	   data	    bss	    dec	    hex	filename
+  22712	     48	  24192	  46952	   b768	TCII_Filter_429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: TCII_Filter_429ZI.list
+ 
+00:16:39 **** Incremental Build of configuration Debug for project TCII_Filter_429ZI ****
+make -j16 all 
+arm-none-eabi-size  TCII_Filter_429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22712	     48	  24192	  46952	   b768	TCII_Filter_429ZI.elf
+Finished building: default.size.stdout
  

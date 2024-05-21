@@ -22,21 +22,21 @@ extern float32_t InputB[SAMPLES_PER_BLOCK];
 extern float32_t OutputA[SAMPLES_PER_BLOCK];
 extern float32_t OutputB[SAMPLES_PER_BLOCK];
 
-#define SAMPLE_RATE 44100
 #define CARGANDO_A false
+
+
+
 
 void HAL_ADC_ConCpltCallback(ADC_HandleTypeDef* hadc){
 	static uint16_t index = 0;
-
-	uint16_t val=ADC_Read();
-
+	uint32_t val=ADC_Read();
 	if (estado==CARGANDO_A){
-		InputA[index] = val;
-		DAC_Write(OutputA[index]);
+		InputA[index] =(float32_t) val;
+		DAC_Write((uint32_t)OutputA[index]);
 	}
 	else {
-		InputB[index] = val ;
-		DAC_Write(OutputB[index]);
+		InputB[index] =(float32_t) val ;
+		DAC_Write((uint32_t)OutputB[index]);
 	}
 
 	index++;
@@ -46,7 +46,4 @@ void HAL_ADC_ConCpltCallback(ADC_HandleTypeDef* hadc){
 		else procesar=PROCESAR_B;
 		estado ^= 1;
 	}
-
-
-
 }
