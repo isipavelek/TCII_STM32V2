@@ -49,7 +49,7 @@ typedef enum{
 	PROCESAR_A,
 	PROCESAR_B,
 
-}procesar_type_t;
+}estado_t;
 
 
 #endif /* INC_FILTER_H_ */

@@ -108,6 +108,11 @@ void Error_Handler(void);
 #define LD2_Pin GPIO_PIN_7
 #define LD2_GPIO_Port GPIOB
 
+
+#define MEASURE_Pin GPIO_PIN_8
+#define MEASURE_Pin_GPIO_Port GPIOC
+
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

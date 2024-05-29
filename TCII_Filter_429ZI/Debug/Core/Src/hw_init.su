@@ -8,4 +8,4 @@
 ../Core/Src/hw_init.c:262:6:MX_USART3_UART_Init	8	static
 ../Core/Src/hw_init.c:286:6:MX_USB_OTG_FS_PCD_Init	8	static
 ../Core/Src/hw_init.c:312:6:MX_GPIO_Init	56	static
-../Core/Src/hw_init.c:360:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/hw_init.c:370:6:Error_Handler	4	static,ignoring_inline_asm

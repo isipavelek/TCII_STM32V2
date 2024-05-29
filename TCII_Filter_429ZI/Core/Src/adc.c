@@ -14,23 +14,23 @@
 #include "dac_port.h"
 
 
-uint8_t estado = 0;
-procesar_type_t procesar=NO_PROCESAR;
+estado_t estado=NO_PROCESAR;
 
 extern float32_t InputA[SAMPLES_PER_BLOCK];
 extern float32_t InputB[SAMPLES_PER_BLOCK];
 extern float32_t OutputA[SAMPLES_PER_BLOCK];
 extern float32_t OutputB[SAMPLES_PER_BLOCK];
 
+
+
 #define CARGANDO_A false
 
 
-
-
-void HAL_ADC_ConCpltCallback(ADC_HandleTypeDef* hadc){
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+	static uint8_t estadoADC = 0;
 	static uint16_t index = 0;
 	uint32_t val=ADC_Read();
-	if (estado==CARGANDO_A){
+	if (estadoADC==CARGANDO_A){
 		InputA[index] =(float32_t) val;
 		DAC_Write((uint32_t)OutputA[index]);
 	}
@@ -42,8 +42,12 @@ void HAL_ADC_ConCpltCallback(ADC_HandleTypeDef* hadc){
 	index++;
 	if (index == SAMPLES_PER_BLOCK) {
 		index = 0;
-		if(estado==CARGANDO_A)procesar=PROCESAR_A;
-		else procesar=PROCESAR_B;
-		estado ^= 1;
+		if(estadoADC==CARGANDO_A)estado=PROCESAR_A;
+		else estado=PROCESAR_B;
+		estadoADC ^= 1;
+
 	}
+
+
+
 }

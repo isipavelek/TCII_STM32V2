@@ -26,9 +26,9 @@ typedef enum{
 	IIR,
 }filter_type_t;
 
-filter_type_t filter = FIR; //Función que ejecuta
+filter_type_t filter = TALKTHROUGH; //Función que ejecuta
 
-extern procesar_type_t procesar;
+extern estado_t estado;
 
 //Estructuras
 arm_fir_instance_f32 SFIR;
@@ -70,17 +70,17 @@ int main(void){
 
 
 	while(true){
-		if(procesar){
+		if(estado==NO_PROCESAR){
 			switch (filter){
 				case TALKTHROUGH:
 						for(uint16_t i=0;i<SAMPLES_PER_BLOCK;i++){
-							if(procesar==PROCESAR_A)OutputA[i]=InputA[i];
+							if(estado==PROCESAR_A)OutputA[i]=InputA[i];
 							else OutputB[i]=InputB[i];
 						}
 						break;
 
 				case IIR:
-						if(procesar==PROCESAR_A){
+						if(estado==PROCESAR_A){
 							filter_bicuad_cascade(&SIIR, InputA, OutputA, SAMPLES_PER_BLOCK);
 						}else {
 							filter_bicuad_cascade(&SIIR, InputB, OutputB, SAMPLES_PER_BLOCK);
@@ -88,14 +88,14 @@ int main(void){
 						break;
 
 				case FIR:
-						if(procesar==PROCESAR_A){
+						if(estado==PROCESAR_A){
 							arm_fir_f32(&SFIR,InputA, OutputA, SAMPLES_PER_BLOCK);
 						}else {
 							arm_fir_f32(&SFIR,InputB, OutputB , SAMPLES_PER_BLOCK);
-						}
+}
 						break;
 			}
-			procesar=NO_PROCESAR;
+			estado=NO_PROCESAR;
 		}
 	}
 }

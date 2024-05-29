@@ -23,6 +23,6 @@ void MX_DAC_Init(void);
 void MX_TIM2_Init(void);
 void MX_NVIC_Init(void);
 
-#define FBUS 168000000
-
+#define FBUS (168000000)
+#define FACTOR_BUS (23)
 #endif /* INC_HW_INIT_H_ */
