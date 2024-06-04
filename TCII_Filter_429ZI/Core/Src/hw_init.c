@@ -99,6 +99,11 @@ void MX_NVIC_Init(void)
   /* ADC_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(ADC_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(ADC_IRQn);
+  HAL_NVIC_SetPriority(USART3_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(USART3_IRQn);
+
+
+
 }
 
 /**
@@ -152,12 +157,7 @@ void MX_ADC1_Init(void)
   */
 void MX_DAC_Init(void)
 {
-
-
-
   DAC_ChannelConfTypeDef sConfig = {0};
-
-
   hdac.Instance = DAC;
   if (HAL_DAC_Init(&hdac) != HAL_OK)
   {

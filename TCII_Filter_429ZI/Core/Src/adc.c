@@ -31,7 +31,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	static uint16_t index = 0;
 	uint32_t val=ADC_Read();
 	if (estadoADC==CARGANDO_A){
-		InputA[index] =(float32_t) val;
+		InputA[index] =(float32_t)val;
 		DAC_Write((uint32_t)OutputA[index]);
 	}
 	else {

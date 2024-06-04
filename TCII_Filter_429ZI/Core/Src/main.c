@@ -26,7 +26,7 @@ typedef enum{
 	IIR,
 }filter_type_t;
 
-filter_type_t filter = TALKTHROUGH; //Función que ejecuta
+filter_type_t filter = FIR; //Función que ejecuta
 
 extern estado_t estado;
 
@@ -43,15 +43,16 @@ float32_t InputA[SAMPLES_PER_BLOCK]={0};
 float32_t InputB[SAMPLES_PER_BLOCK]={0};
 float32_t OutputA[SAMPLES_PER_BLOCK]={0};
 float32_t OutputB[SAMPLES_PER_BLOCK]={0};
-
+extern UART_HandleTypeDef huart3;
+uint8_t RxChar3;
 
 int main(void){
-	//uint32_t index;
-//	float32_t max;
+
 	Hard_Init();
 	ADC_Init();
 	DAC_Init();
-
+	HAL_UART_Transmit(&huart3, (const uint8_t *)"Hola mundo", sizeof("Hola mundo"), HAL_MAX_DELAY);
+	//UART_Transmit_IT();
 	//Conversion float to q31
 #ifndef float_filter
 	arm_float_to_q31(float_fir_taps, fir_taps,FIR_TAP_NUM);
@@ -68,9 +69,13 @@ int main(void){
 	arm_fir_init_f32(&SFIR,FIR_TAP_NUM,float_fir_taps,fir_state,SAMPLES_PER_BLOCK);
 	//arm_biquad_cascade_df1_init_f32(&SIIR,IIR_TAP_NUM/5,float_iir_taps,iir_state);
 
+	HAL_UART_Receive_IT(&huart3,&RxChar3,1);
 
 	while(true){
-		if(estado==NO_PROCESAR){
+
+
+
+		if(estado!=NO_PROCESAR){
 			switch (filter){
 				case TALKTHROUGH:
 						for(uint16_t i=0;i<SAMPLES_PER_BLOCK;i++){
@@ -92,7 +97,7 @@ int main(void){
 							arm_fir_f32(&SFIR,InputA, OutputA, SAMPLES_PER_BLOCK);
 						}else {
 							arm_fir_f32(&SFIR,InputB, OutputB , SAMPLES_PER_BLOCK);
-}
+						}
 						break;
 			}
 			estado=NO_PROCESAR;
@@ -100,4 +105,13 @@ int main(void){
 	}
 }
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	if(RxChar3=='1'){
+		HAL_UART_Transmit(&huart3, (const uint8_t *)"hey", sizeof("hey"), HAL_MAX_DELAY);
+	}else if(RxChar3=='2'){
+		HAL_UART_Transmit(&huart3, (const uint8_t *)"wow", sizeof("wow"), HAL_MAX_DELAY);
+	}
+	HAL_UART_Receive_IT(&huart3,&RxChar3,1);
+
+}
 
