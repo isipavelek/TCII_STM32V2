@@ -19,14 +19,10 @@
 #include "adc.h"
 #include "dac_port.h"
 #include "hw_init.h"
+#include "uart_port.h"
+#include "uart.h"
 
-typedef enum{
-	TALKTHROUGH,
-	FIR,
-	IIR,
-}filter_type_t;
-
-filter_type_t filter = FIR; //Función que ejecuta
+filter_type_t filter = TALKTHROUGH; //Función que ejecuta
 
 extern estado_t estado;
 
@@ -44,15 +40,13 @@ float32_t InputB[SAMPLES_PER_BLOCK]={0};
 float32_t OutputA[SAMPLES_PER_BLOCK]={0};
 float32_t OutputB[SAMPLES_PER_BLOCK]={0};
 extern UART_HandleTypeDef huart3;
-uint8_t RxChar3;
 
 int main(void){
 
 	Hard_Init();
 	ADC_Init();
 	DAC_Init();
-	HAL_UART_Transmit(&huart3, (const uint8_t *)"Hola mundo", sizeof("Hola mundo"), HAL_MAX_DELAY);
-	//UART_Transmit_IT();
+
 	//Conversion float to q31
 #ifndef float_filter
 	arm_float_to_q31(float_fir_taps, fir_taps,FIR_TAP_NUM);
@@ -67,13 +61,13 @@ int main(void){
 	//arm_fir_init_q31(&SFIR,FIR_TAP_NUM,fir_taps,fir_state,SAMPLES_PER_BLOCK);
 
 	arm_fir_init_f32(&SFIR,FIR_TAP_NUM,float_fir_taps,fir_state,SAMPLES_PER_BLOCK);
-	//arm_biquad_cascade_df1_init_f32(&SIIR,IIR_TAP_NUM/5,float_iir_taps,iir_state);
+//	arm_biquad_cascade_df1_init_f32(&SIIR,IIR_TAP_NUM/5,float_iir_taps,iir_state);
+	arm_biquad_cascade_df1_init_f32(&SIIR,IIR_TAP_NUM,float_iir_taps,iir_state);
 
-	HAL_UART_Receive_IT(&huart3,&RxChar3,1);
+	UART_Menu();
+	UART_Receive_IT_init();
 
 	while(true){
-
-
 
 		if(estado!=NO_PROCESAR){
 			switch (filter){
@@ -86,9 +80,9 @@ int main(void){
 
 				case IIR:
 						if(estado==PROCESAR_A){
-							filter_bicuad_cascade(&SIIR, InputA, OutputA, SAMPLES_PER_BLOCK);
+							arm_biquad_cascade_df1_f32(&SIIR, InputA, OutputA, SAMPLES_PER_BLOCK);
 						}else {
-							filter_bicuad_cascade(&SIIR, InputB, OutputB, SAMPLES_PER_BLOCK);
+							arm_biquad_cascade_df1_f32(&SIIR, InputB, OutputB, SAMPLES_PER_BLOCK);
 						}
 						break;
 
@@ -98,20 +92,13 @@ int main(void){
 						}else {
 							arm_fir_f32(&SFIR,InputB, OutputB , SAMPLES_PER_BLOCK);
 						}
-						break;
+				default:break;
+
 			}
 			estado=NO_PROCESAR;
 		}
 	}
 }
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	if(RxChar3=='1'){
-		HAL_UART_Transmit(&huart3, (const uint8_t *)"hey", sizeof("hey"), HAL_MAX_DELAY);
-	}else if(RxChar3=='2'){
-		HAL_UART_Transmit(&huart3, (const uint8_t *)"wow", sizeof("wow"), HAL_MAX_DELAY);
-	}
-	HAL_UART_Receive_IT(&huart3,&RxChar3,1);
 
-}
 

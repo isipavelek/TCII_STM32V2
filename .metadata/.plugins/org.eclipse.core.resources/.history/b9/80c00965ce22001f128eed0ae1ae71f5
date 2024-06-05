@@ -1,0 +1,14 @@
+/*
+ * uart.h
+ *
+ *  Created on: Jun 4, 2024
+ *      Author: ipave
+ */
+
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+void UART_Transmit(const uint8_t *, uint16_t );
+
+
+#endif /* INC_UART_H_ */

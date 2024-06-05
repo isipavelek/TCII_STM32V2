@@ -1,0 +1,13 @@
+/*
+ * uart_port.h
+ *
+ *  Created on: Jun 4, 2024
+ *      Author: ipave
+ */
+
+#ifndef INC_UART_PORT_H_
+#define INC_UART_PORT_H_
+
+
+
+#endif /* INC_UART_PORT_H_ */

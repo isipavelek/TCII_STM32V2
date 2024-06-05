@@ -1,0 +1,26 @@
+/*
+ * UART.c
+ *
+ *  Created on: Jun 4, 2024
+ *      Author: ipave
+ */
+
+#include <stdint.h>
+#include "uart_port.h"
+#include "filter.h"
+
+uint8_t RxChar3;
+extern filter_type_t filter; //Función que ejecuta
+
+void UART_handler(void){
+	if(RxChar3=='1'){
+		filter= TALKTHROUGH;
+		UART_Transmit((const uint8_t *)"TALKTHROUGH\r\n", sizeof("TALKTHROUGH\r\n"));
+	}else if(RxChar3=='2'){
+		filter= FIR;
+		UART_Transmit((const uint8_t *)"FIR\r\n", sizeof("FIR\r\n"));
+	}else if(RxChar3=='3'){
+		filter= IIR;
+		UART_Transmit((const uint8_t *)"IIR\r\n", sizeof("IIR\r\n"));
+	}
+}

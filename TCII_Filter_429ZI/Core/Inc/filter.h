@@ -15,6 +15,13 @@
 #include <stdint.h>
 #include "arm_math.h"
 
+typedef enum{
+	TALKTHROUGH,
+	FIR,
+	IIR,
+	NOTHING,
+}filter_type_t;
+
 #define float_filter
 
 #ifdef float_filter

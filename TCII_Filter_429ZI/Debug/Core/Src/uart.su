@@ -1,0 +1,2 @@
+../Core/Src/uart.c:23:6:UART_handler	16	static
+../Core/Src/uart.c:43:6:UART_Menu	8	static

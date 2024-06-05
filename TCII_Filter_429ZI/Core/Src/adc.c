@@ -27,7 +27,7 @@ extern float32_t OutputB[SAMPLES_PER_BLOCK];
 
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-	static uint8_t estadoADC = 0;
+	static bool estadoADC = CARGANDO_A;
 	static uint16_t index = 0;
 	uint32_t val=ADC_Read();
 	if (estadoADC==CARGANDO_A){
@@ -45,9 +45,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 		if(estadoADC==CARGANDO_A)estado=PROCESAR_A;
 		else estado=PROCESAR_B;
 		estadoADC ^= 1;
-
 	}
-
-
+	HAL_GPIO_TogglePin(MEASURE_Pin_GPIO_Port,MEASURE_Pin);
 
 }

@@ -1,0 +1,3 @@
+../Core/Src/uart_port.c:15:6:HAL_UART_RxCpltCallback	1
+../Core/Src/uart_port.c:21:6:UART_Receive_IT_init	1
+../Core/Src/uart_port.c:25:6:UART_Transmit	1

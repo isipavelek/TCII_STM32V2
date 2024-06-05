@@ -1,0 +1,19 @@
+/*
+ * uart_port.c
+ *
+ *  Created on: Jun 4, 2024
+ *      Author: ipave
+ */
+
+#include "main.h"
+
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	UART_handler();
+	HAL_UART_Receive_IT(&huart3,&RxChar3,1);
+
+}
+
+void UART_Transmit(const uint8_t *pData, uint16_t Size){
+	HAL_UART_Transmit(&huart3, pData, Size, HAL_MAX_DELAY);
+}
